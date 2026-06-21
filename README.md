@@ -50,7 +50,7 @@ python -m pytest -m phan_quyen     # Phân quyền & bảo mật
 python -m pytest -m exploratory    # Exploratory
 
 # Debug – xem browser
-HEADLESS=false SLOW_MO=600 python -m pytest -s tests/login_test.py
+HEADLESS=false SLOW_MO=600 python -m pytest -s tests/test_login.py
 
 # Song song (nhanh hơn)
 python -m pytest -n 4 --dist=loadfile
