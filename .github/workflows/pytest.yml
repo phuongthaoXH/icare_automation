@@ -18,10 +18,9 @@ jobs:
         python -m pip install --upgrade pip
         pip install -r requirements.txt
 
+    # Chỉ cài đặt trình duyệt, bỏ qua lệnh cài đặt dependencies hệ thống
     - name: Install Playwright browsers
-      run: |
-        playwright install chromium
-        playwright install-deps chromium
+      run: playwright install chromium
 
     - name: Run tests
       run: pytest
