@@ -11,14 +11,17 @@ jobs:
     - name: Set up Python
       uses: actions/setup-python@v4
       with:
-        python-version: '3.12' # Hạ xuống 3.12 để đảm bảo độ tương thích
+        python-version: '3.12'
 
     - name: Install dependencies
       run: |
         python -m pip install --upgrade pip
         pip install -r requirements.txt
-        # Cài đặt trình duyệt cho playwright ngay trong môi trường CI
+
+    - name: Install Playwright browsers
+      run: |
         playwright install chromium
+        playwright install-deps chromium
 
     - name: Run tests
       run: pytest
